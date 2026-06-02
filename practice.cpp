@@ -1,3 +1,4 @@
+// THIS FILE WILL CONTAIN AN OOP PRACTICES
 #include <iostream>
 using namespace std;
 
@@ -15,11 +16,6 @@ class printer{
 };
 
 int main(){
-    
-    printer person1 = new printer();
-        
-   
-
 
 
     return 0;
