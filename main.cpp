@@ -18,16 +18,6 @@
     - std::set: A collection of unique elements, where each element can only appear once...
     */
 
-    //std::string name;
-    //int age;
-    //std::cout << "Enter your name: ";
-    //std::getline(std::cin, name);
-    //std::cout << "Enter your age: ";
-    //std::cin >> age;
-
-    //std::cout << "Hello, " << name << "! You are " << age << " years old." << std::endl;
-    //std::cout << "Welcome to C++ programming!" << std::endl;
-    //return 0;
 // }
 
 
@@ -314,6 +304,7 @@ int main(){
     return 0;
 }
 */
+/*
 #include <iostream>
 
 const int ROWS = 10;
@@ -433,5 +424,15 @@ int main() {
 
     } while (choice != 4);
 
+    return 0;
+}
+*/
+#include <iostream>
+int add(int a, int b){
+    return a + b;
+}
+int main(){
+    
+    std::cout << add(5, 2) << std::endl;
     return 0;
 }
