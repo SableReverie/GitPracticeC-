@@ -631,4 +631,98 @@ int main() {
 
     return 0;
 }
+=============================================== FUNCTIONS =============================================
 */
+// FUNCTION DECLARATION = A function declaration tells the compiler that a function exist.
+/*
+#include <iostream>
+using namespace std;
+
+// Function declaration
+int add(int, int);
+
+int main() {
+    cout << add(5, 3);
+    return 0;
+}
+
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
+*/
+// FUNCTION DEFINITION = A function definition contains the actual code that executes.
+/*
+#include <iostream>
+using namespace std;
+
+int greet() {
+    cout << "Hello World!";
+    return 0;
+}
+
+int main() {
+    greet();
+}
+*/
+// FUNCTION PARAMETERS = Parameters are variables that recieve values when a function is called.
+/*
+#include <iostream>
+using namespace std;
+
+void displayName(string name) {
+    cout << "Hello " << name;
+}
+
+int main() {
+    displayName("John");
+}
+*/
+// RETURN VALUE = A function can send a value back using return
+/*
+#include <iostream>
+using namespace std;
+
+int square(int num) {
+    return num * num;
+}
+
+int main() {
+    int result = square(5);
+    cout << result;
+}
+*/
+// PASS BY VALUE = The function recieves a copy of the variable. Change inside the function do not affect the original variable.
+/*
+#include <iostream>
+using namespace std;
+
+void changeValue(int x) {
+    x = 100;
+}
+
+int main() {
+    int num = 50;
+
+    changeValue(num);
+
+    cout << num;
+}
+*/
+// PASS BY REFERENCE = The function recieves the actual variable using &.
+#include <iostream>
+using namespace std;
+
+void changeValue(int &x) {
+    x = 100;
+}
+
+int main() {
+    int num = 50;
+
+    changeValue(num);
+
+    cout << num;
+}
+
+
