@@ -981,6 +981,138 @@ int factorial(int num1)
 }
 */
 // ================================ ARRAYS ===========================================
+/*
+#include <iostream>
+using std::cout;
+int main(){
+
+    // Value: 10  20  30  40  50
+    // Index: 0   1   2   3   4
+
+    int numbers[5] = {10, 20, 30, 40, 50};
+    cout << numbers[0] << '\n';
+    cout << numbers[1] << '\n';
+    cout << numbers[2] << '\n';
+    cout << numbers[3] << '\n';
+    cout << numbers[4] << '\n';
+}
+*/
+
+// LOOP THROUGH AN ARRAY 
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numbers[5] = {10, 20, 30, 40, 50};
+
+    for(int i = 0; i < 5; i++)
+    {
+        cout << numbers[i] << " ";
+    }
+
+    return 0;
+}
+*/
+
+// MULTI DIMENSIONAL ARRAYS
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{   
+      //Col0 //Col1 //Col2
+
+//Row0 //90    //85   //88
+
+//Row1 //75    //80   //95
+    
+    int grades[2][3] = the [2] is the rows, the [3] is the col.
+    {
+        {90, 85, 88},
+        {75, 80, 95}
+    };
+
+    cout << grades[0][0] << endl;
+    cout << grades[1][2] << endl;
+
+    return 0;
+}
+*/
+/*
+// LOOPS THROUGH AN 2D ARRAY
+#include <iostream> 
+using std::cout; 
+
+int main() {
+    int grades[2][3] = // the [2] is the rows, the [3] is the col.
+    { 
+        {90, 85, 88}, 
+        {75, 80, 95} 
+    }; 
+    
+    for(int row = 0; row < 2; row++) { 
+        for(int col = 0; col < 3; col++) { 
+            cout << grades[row][col] << " "; 
+        } 
+        cout << '\n'; 
+    } // The outer loop ends here
+    
+    return 0; 
+} // The main() function ends here
+*/
+// CHARACTER ARRAYS
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char word[5] = {'H', 'e', 'l', 'l', 'o'};
+
+    for(int i = 0; i < 5; i++)
+    {
+        cout << word[i];
+    }
+
+    return 0;
+}
+*/
+
+// STRING MANIPULATION 
+// Length Of The String
+// Access Characters
+// Concatenate Strings
+// Append Strings
+// Change Characters
+// Find Characters 
+// Extract Part of a String
+#include <iostream>
+using std::string, std::cout;
+int main(){
+
+    string name = "Prince";
+    string first = "Gian";
+    string last = "Cultura";
+    string text = "Hello";
+    string word = "Cat";
+    string word1 = "Programming";
+    cout << name.length() << '\n';
+    cout << name[0];
+    string full = first + " " + last;
+    cout << full << '\n';
+    
+    text.append("World!");
+    cout << text << '\n';
+
+    word[0] = 'B';
+
+    cout << word << '\n';
 
 
 
+
+    return 0;
+}
