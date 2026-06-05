@@ -709,7 +709,8 @@ int main() {
     cout << num;
 }
 */
-// PASS BY REFERENCE = The function recieves the actual variable using &.
+// PASS BY REFERENCE = The function recieves the actual variable using &. So it change the variable in original function num.
+/*
 #include <iostream>
 using namespace std;
 
@@ -723,6 +724,260 @@ int main() {
     changeValue(num);
 
     cout << num;
+}
+*/
+
+// FUNCTION OVERLOADING = Multiple functions can have the same name but different parameters.
+/*
+#include <iostream>
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
+}
+
+int main() {
+    cout << add(2, 3) << endl;
+    cout << add(2.5, 3.5);
+}
+*/
+
+// DEFAULT ARGUMENTS = Default arguments provide values automatically if none are supplied.
+/*
+#include <iostream>
+using namespace std;
+
+void greet(string name = "Guest") {
+    cout << "Hello " << name;
+}
+
+int main() {
+    greet();
+}
+*/
+
+// INLINE FUNCTIONS = An inline function asks the compiler to replace the function call with the actual code.
+/*
+#include <iostream>
+using namespace std;
+
+inline int square(int x) {
+    return x * x;
+}
+
+int main() {
+    cout << square(5);
+}
+*/
+
+// RECURSION = A function calling itself.
+/*
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+
+    if(n == 1)
+        return 1;
+
+    return n * factorial(n - 1);
+}
+
+int main() {
+    cout << factorial(5);
+}
+*/
+
+// ANOTHER EXAMPLE OF RECURSION
+ /*
+#include <iostream>
+using namespace std;
+
+void print(int n) {
+
+    if(n > 5)
+        return;
+
+    cout << n << " ";
+
+    print(n + 1);
+}
+
+int main() {
+    print(1);
+}
+*/
+// LAMBDA FUNCTION = A lambda is an anonymous function (a function without a name).
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    auto greet = []() {
+        cout << "Hello World";
+    };
+
+    greet();
+}
+*/
+
+// LAMBDA WITH PARAMETERS 
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    auto add = [](int a, int b) {
+        return a + b;
+    };
+
+    cout << add(5, 3);
+}
+*/
+// LAMBDA CAPTURE EXAMPLE = Captures the variable x from outside the lambda
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int x = 10;
+
+    auto show = [x]() {
+        cout << x;
+    };
+
+    show();
+}
+*/
+
+// PRACTICE PROBLEMS 
+#include <iostream>
+using std::cout, std::cin, std::endl;
+
+int add(int num1, int num2);
+double add(double num1, double num2);
+
+int factorial(int num1);
+
+void greet(std::string name = "Guest");
+
+void copyTest(int x);
+
+void increase(int &score);
+
+int main()
+{
+    cout << "======== Default Arguments =========" << '\n';
+    greet();
+    greet("Prince");
+
+    cout << "\n======== Function Overloading ========" << '\n';
+
+    cout << "add(5, 3) = "
+         << add(5, 3) << '\n';
+
+    cout << "add(2.5, 3.5) = "
+         << add(2.5, 3.5) << '\n';
+
+    cout << "\n========= Pass by Value ===========" << '\n';
+
+    int num = 10;
+
+    cout << "Before a function call: "
+         << num << '\n';
+
+    copyTest(num);
+
+    cout << "After a function call: "
+         << num << '\n';
+
+    cout << "\n========= Pass by Reference ===========" << '\n';
+
+    int score = 50;
+
+    cout << "Before a function call: "
+         << score << '\n';
+
+    increase(score);
+
+    cout << "After a function call: "
+         << score << '\n';
+
+    cout << "\n================ Recursion ================" << '\n';
+
+    int n = 5;
+
+    cout << "Factorial of "
+         << n
+         << " = "
+         << factorial(n)
+         << '\n';
+
+    cout << "\n=============== Lambda Function ===============" << '\n';
+
+    auto multiply = [](int a, int b)
+    {
+        return a * b;
+    };
+
+    cout << "multiply(4, 5) = "
+         << multiply(4, 5)
+         << '\n';
+
+    return 0;
+}
+
+// Function Definitions
+
+void greet(std::string name)
+{
+    cout << "Hello " << name << '\n';
+}
+
+// Function Overloading (int version)
+int add(int num1, int num2)
+{
+    return num1 + num2;
+}
+
+// Function Overloading (double version)
+double add(double num1, double num2)
+{
+    return num1 + num2;
+}
+
+// Pass by Value
+void copyTest(int x)
+{
+    x = 100;
+
+    cout << "Inside function: "
+         << x
+         << '\n';
+}
+
+// Pass by Reference
+void increase(int &score)
+{
+    score += 10;
+}
+
+// Recursion
+int factorial(int num1)
+{
+    if (num1 == 1)
+    {
+        return 1;
+    }
+
+    return num1 * factorial(num1 - 1);
 }
 
 
