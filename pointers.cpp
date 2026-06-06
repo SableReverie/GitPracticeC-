@@ -246,7 +246,7 @@ Game programming
 Embedded systems
 */
 // Swap Using Pointers 
-
+/*
 #include <iostream>
 using namespace std;
 
@@ -267,3 +267,42 @@ int main() {
 
     return 0;
 }
+*/
+
+// Reference vs Pointer Comparison 
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10;
+
+    int* ptr = &a;
+    int& ref = a;
+
+    *ptr = 20;   // using pointer
+    ref = 30;    // using reference
+
+    cout << a << endl;
+
+    return 0;
+}
+*/
+
+// Pointer Safety Example
+/*
+#include <iostream>
+using namespace std;
+
+int main() {
+    int* ptr = nullptr;
+
+    if (ptr != nullptr) {
+        cout << *ptr << endl;
+    } else {
+        cout << "Safe: pointer is null" << endl;
+    }
+
+    return 0;
+}
+*/
