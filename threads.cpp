@@ -80,7 +80,7 @@ Actual:
 
 This is a race condition.
 */
-
+/*
 #include <iostream>
 #include <thread>
 #include <mutex>
@@ -110,7 +110,7 @@ int main()
 
     std::cout << counter << std::endl;
 }
-
+*/
 /*
 Output:
 
@@ -118,3 +118,62 @@ Output:
 
 The mutex ensures only one thread modifies counter at a time.
 */
+
+
+// ====================== LOCKS ===============================
+
+/*
+3. Locks
+
+Manually calling:
+
+mtx.lock();
+...
+mtx.unlock();
+
+is dangerous.
+
+If an exception occurs:
+
+mtx.lock();
+
+throw std::runtime_error("error");
+
+mtx.unlock(); // never reached
+
+The mutex remains locked forever.
+
+std::lock_guard
+
+C++ provides RAII-based locking.
+
+void increment()
+{
+    for(int i = 0; i < 100000; i++)
+    {
+        std::lock_guard<std::mutex> lock(mtx);
+
+        counter++;
+    }
+}
+
+When the scope ends:
+
+}
+
+the lock automatically unlocks.
+
+std::unique_lock
+
+More flexible than lock_guard.
+
+std::unique_lock<std::mutex> lock(mtx);
+
+Allows:
+
+lock.unlock();
+lock.lock();
+
+Useful with condition variables.
+*/
+
